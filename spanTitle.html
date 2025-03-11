@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Span Title</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app" class="w-screen p-4">
+    <!-- 上方標題列 -->
+    <div class="grid grid-cols-3 items-center py-4 shadow-md">
+      
+      <!-- 左側 span (放大字體並增加 padding) -->
+      <span class="ml-4 text-lg font-semibold" title="This is a tooltip">提示資訊</span>
+
+      <!-- 中央標題 -->
+      <div class="text-2xl font-bold text-center">
+        預計請購表單
+      </div>
+
+      <!-- 右側區塊放大 -->
+      <div class="flex space-x-3 justify-end mr-4">
+        <div class="px-6 py-3 bg-blue-200 rounded shadow text-lg">區塊一</div>
+        <div class="px-4 py-2 bg-blue-200 rounded shadow">區塊二</div>
+        <div class="px-4 py-2 bg-blue-200 rounded shadow">區塊三</div>
+        <div class="px-4 py-2 bg-blue-200 rounded shadow">區塊四</div>
+      </div>
+    </div>
+
+    <!-- 原本的標題 -->
+    <div class="text-2xl font-bold text-center mb-4 py-4 shadow-md relative">
+      提案管理系統
+      <button @click="resetAllFilters"
+        class="absolute top-2 right-4 px-4 py-2 bg-red-500 text-white rounded shadow-md hover:bg-red-600 transition">
+        全部重置
+      </button>
+    </div>
+  </div>
+
+  <script>
+    Vue.createApp({
+      methods: {
+        resetAllFilters() {
+          alert('已重置所有篩選條件！');
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>
